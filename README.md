@@ -28,6 +28,8 @@ Content filtering:
 add_filter( "fr_virtual_page_content_{$slug}", 'my_virtual_page_content' );
 function my_virtual_page_content( $content ) {
 	// Make changes to $content here.
+	// If you want to use WP's automatic formatting, you need to explicitly add it:
+	$content = wpautop( $content );
 	return $content;
 }
 ```
