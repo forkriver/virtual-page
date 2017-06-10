@@ -9,12 +9,12 @@ To create a virtual page:
 ```php
 add_action( 'forkriver_virtual_page_init', 'my_virtual_page_creator' );
 function my_virtual_page_creator() {
-	if ( function_exists( '\forkriver\virtual_page\register_virtual_page' ) ) {
-		\forkriver\virtual_page\register_virtual_page( array(
-			'slug'        => 'desired-slug',  // required
-			'title'       => 'My Page Title', // required
-		) );
-	}
+    if ( function_exists( '\forkriver\virtual_page\register_virtual_page' ) ) {
+        \forkriver\virtual_page\register_virtual_page( array(
+            'slug'        => 'desired-slug',  // required
+            'title'       => 'My Page Title', // required
+        ) );
+    }
 }
 ```
 
@@ -27,10 +27,10 @@ Content filtering:
 ```php
 add_filter( "fr_virtual_page_content_{$slug}", 'my_virtual_page_content' );
 function my_virtual_page_content( $content ) {
-	// Make changes to $content here.
-	// If you want to use WP's automatic formatting, you need to explicitly add it:
-	$content = wpautop( $content );
-	return $content;
+    // Make changes to $content here.
+    // If you want to use WP's automatic formatting, you need to explicitly add it:
+    $content = wpautop( $content );
+    return $content;
 }
 ```
 
@@ -41,8 +41,8 @@ Title filtering:
 ```php
 add_filter( "fr_virtual_page_title_{$slug}", 'my_virtual_page_title' );
 function my_virtual_page_title( $title ) {
-	// Make changes to $title here.
-	return $title;
+    // Make changes to $title here.
+    return $title;
 }
 ```
 
@@ -53,8 +53,8 @@ Template filtering:
 ```php
 add_filter( "fr_virtual_page_template_{$slug}", 'my_virtual_page_template' );
 function my_virtual_page_template( $template ) {
-	// Make changes to $template here.
-	return $template;
+    // Make changes to $template here.
+    return $template;
 }
 ```
 
