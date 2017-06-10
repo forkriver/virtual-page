@@ -266,7 +266,7 @@ class Virtual_Page {
 				 * @param string $content The content.
 				 * @since 1.0.0
 				 */
-				$content = apply_filters( 'virtual_page_content_' . $page_slug, $content );
+				$content = apply_filters( 'fr_virtual_page_content_' . $page_slug, $content );
 			}
 		}
 		return $content;
@@ -294,7 +294,7 @@ class Virtual_Page {
 				 * @param string $title The title.
 				 * @since 1.0.0
 				 */
-				$title = apply_filters( 'virtual_page_title_' . $page_slug, $title );
+				$title = apply_filters( 'fr_virtual_page_title_' . $page_slug, $title );
 			}
 		}
 		return $title;
