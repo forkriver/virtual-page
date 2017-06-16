@@ -18,3 +18,6 @@ namespace forkriver\virtual_page;
 
 
 require 'class-virtual-page.php';
+
+// Registers the query variables.
+add_filter( 'query_vars', array( '\forkriver\virtual_page\Virtual_Page', 'query_vars' ) );

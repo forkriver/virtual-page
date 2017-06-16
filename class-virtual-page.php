@@ -63,12 +63,9 @@ class Virtual_Page {
 	function __construct() {
 
 		add_action( 'init', array( $this, 'virtual_page_init' ) );
-
 		add_action( 'forkriver_virtual_page_init', array( $this, 'parse_virtual_page_registry' ), 10000 );
 		add_action( 'forkriver_virtual_page_init', array( $this, 'maybe_flush_rules' ), 10001 );
-		add_filter( 'query_vars', array( $this, 'query_vars' ) );
 		add_filter( 'template_include', array( $this, 'template_selector' ) );
-
 		add_action( 'pre_get_posts', array( $this, 'virtual_page_query' ) );
 		add_filter( 'the_content', array( $this, 'virtual_page_content' ) );
 		add_filter( 'the_title', array( $this, 'virtual_page_title' ) );
@@ -196,7 +193,7 @@ class Virtual_Page {
 	 * @param array $vars The query variables.
 	 * @return array The filtered query variables.
 	 */
-	function query_vars( $vars ) {
+	public static function query_vars( $vars ) {
 		if ( ! in_array( Virtual_Page::QUERY_VAR, $vars ) ) {
 			$vars[] = Virtual_Page::QUERY_VAR;
 		}
